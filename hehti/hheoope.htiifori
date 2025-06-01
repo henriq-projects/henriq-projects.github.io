@@ -1,0 +1,59 @@
+import sys
+
+def greet(name):
+    """Greets the user with a personalized message."""
+    print(f"Welcome, {name}! This is your home page, have funny!.")
+
+def execute_command(command):
+    """Executes the given command based on predefined options."""
+    if command == "oi":
+        response = input("Como você está? ")
+        if response.lower() in ["bem", "ótimo", "legal"]:
+            print("Que bom ouvir isso!")
+        else:
+            print("Espero que seu dia melhore!")
+    elif command == "ajuda":
+        print("Comandos disponíveis: oi, ajuda, sair")
+    elif command == "date.cec1":
+        import datetime
+        current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"A data e hora atual é: {current_date}")
+    elif command == "soma.ce"
+        sum0 = input("Digite o primeiro número: ")
+        sum1 = input("Digite o segundo número: ")
+        sum = int(sum0) + int(sum1)
+        print(sum)
+    elif command == "list apps": 
+      print("""
+      All apps avaible on Local disk:
+      soma.ce              1 bytes
+      date.cec1            2 bytes""")
+        
+    elif command == "exit":
+        print("System is being terminated!")
+        off_sys_question = input("For shutdown your VM System type 'off' or 'on' for cancel operation'")
+        if off_sys_question == "off":
+          sys.exit()
+        elif off_sys_question == "on":
+          print("Operação abortada")
+        else:
+          print("Ilegal operation")
+    else:
+        print("Comando inválido. Digite 'ajuda' para ver os comandos disponíveis.")
+
+def main():
+    """Main function to handle user interactions."""
+    greet(input("Digite seu nome de usuário: "))
+    while True:
+        try:
+            command = input("Shell> ")
+            execute_command(command)
+        except KeyboardInterrupt:
+            print("\nSystem has being terminated")
+            break
+        except Exception as e:
+            print(f"""Error: {e}.
+            Call customer support for help.""")
+
+if __name__ == "__main__":
+    main()

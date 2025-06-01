@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HenSit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-header">
+        <h1>Espaço seguro | Hensit</h1>
+    </div>
+
+    <div class="content">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Usuário" class="input-field">
+        <input type="password" id="password" placeholder="Senha" class="input-field">
+        <button onclick="login()" class="btn">Entrar</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <div class="site-footer">
+        <p>&copy; 2025 | hensit</p>
+    </div>
+
+    <script>
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hash = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var hashedPassword = await hashPassword(password);
+            
+            const storedUsername = 'henrique';
+            const storedPasswordHash = 'c4d890439be2c344de51664b1d8ed5e13b1e2808df81f3d83bfb2e50239a482e'; // Hash de 'henrique0304'
+            
+            if (username === storedUsername && hashedPassword === storedPasswordHash) {
+                window.location.href = 'hehti/download.html';
+            } else {
+                document.getElementById('error-message').innerText = 'Usuário ou senha incorretos!';
+            }
+        }
+    </script>
+</body>
+</html>
