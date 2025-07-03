@@ -140,9 +140,11 @@
     }
 
     #downloadLink {
-      display: block;
+      display: none;
       margin-top: 10px;
       text-align: center;
+      font-size: 1.1em;
+      color: var(--accent);
     }
 
     @media (max-width: 768px) {
@@ -190,7 +192,7 @@
       <input type="file" id="uploader" accept="video/*"><br>
       <video id="preview" controls></video><br>
       <button id="removerAudio">Remover Áudio</button>
-      <a id="downloadLink" style="display: none;" download="video-sem-audio.mp4">📥 Baixar Vídeo Sem Áudio</a>
+      <a id="downloadLink" download="video-sem-audio.mp4">📥 Baixar Vídeo Sem Áudio</a>
     </div>
 
     <footer class="site-footer">
@@ -218,13 +220,20 @@
     removerBtn.addEventListener('click', async () => {
       removerBtn.textContent = 'Processando... 🌀';
       removerBtn.disabled = true;
+
       if (!ffmpeg.isLoaded()) await ffmpeg.load();
+
       ffmpeg.FS('writeFile', 'input.mp4', await fetchFile(videoFile));
       await ffmpeg.run('-i', 'input.mp4', '-c', 'copy', '-an', 'output.mp4');
+
       const data = ffmpeg.FS('readFile', 'output.mp4');
       const videoBlob = new Blob([data.buffer], { type: 'video/mp4' });
-      downloadLink.href = URL.createObjectURL(videoBlob);
+      const videoURL = URL.createObjectURL(videoBlob);
+
+      preview.src = videoURL; // <-- Atualiza o vídeo preview com o sem áudio
+      downloadLink.href = videoURL;
       downloadLink.style.display = 'block';
+
       removerBtn.textContent = 'Remover Áudio';
       removerBtn.disabled = false;
     });
