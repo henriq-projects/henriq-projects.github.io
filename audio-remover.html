@@ -208,31 +208,47 @@
     const preview = document.getElementById('preview');
     const removerBtn = document.getElementById('removerAudio');
     const downloadLink = document.getElementById('downloadLink');
-    let videoFile;
+    let videoFile = null;
 
     uploader.addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      videoFile = file;
-      preview.src = URL.createObjectURL(file);
-      preview.load();
+      videoFile = e.target.files[0];
+      if (videoFile) {
+        preview.src = URL.createObjectURL(videoFile);
+        preview.load();
+        downloadLink.style.display = 'none'; // Esconde o download quando troca vídeo
+      }
     });
 
     removerBtn.addEventListener('click', async () => {
+      if (!videoFile) {
+        alert('Carrega um vídeo antes, doidão!');
+        return;
+      }
+
       removerBtn.textContent = 'Processando... 🌀';
       removerBtn.disabled = true;
+      downloadLink.style.display = 'none';
 
-      if (!ffmpeg.isLoaded()) await ffmpeg.load();
+      try {
+        if (!ffmpeg.isLoaded()) {
+          await ffmpeg.load();
+        }
 
-      ffmpeg.FS('writeFile', 'input.mp4', await fetchFile(videoFile));
-      await ffmpeg.run('-i', 'input.mp4', '-c', 'copy', '-an', 'output.mp4');
+        ffmpeg.FS('writeFile', 'input.mp4', await fetchFile(videoFile));
+        await ffmpeg.run('-i', 'input.mp4', '-c', 'copy', '-an', 'output.mp4');
 
-      const data = ffmpeg.FS('readFile', 'output.mp4');
-      const videoBlob = new Blob([data.buffer], { type: 'video/mp4' });
-      const videoURL = URL.createObjectURL(videoBlob);
+        const data = ffmpeg.FS('readFile', 'output.mp4');
+        const videoBlob = new Blob([data.buffer], { type: 'video/mp4' });
+        const videoURL = URL.createObjectURL(videoBlob);
 
-      preview.src = videoURL; // <-- Atualiza o vídeo preview com o sem áudio
-      downloadLink.href = videoURL;
-      downloadLink.style.display = 'block';
+        preview.src = videoURL;
+        preview.load();
+
+        downloadLink.href = videoURL;
+        downloadLink.style.display = 'block';
+      } catch (error) {
+        alert('Erro no processamento: ' + error.message);
+      }
 
       removerBtn.textContent = 'Remover Áudio';
       removerBtn.disabled = false;
