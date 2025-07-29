@@ -1,146 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Site oficial do Henriq Projects, onde compartilho meus códigos e projetos!">
   <meta name="keywords" content="Henrique, Projetos, Programação, PronReady, GitHub Pages, Open CSS, henriq, henriq-projects">
   <meta name="author" content="Henrique">
-
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Henriq's Blog</title>
-  <style>
-    :root {
-      --bg: #0f0f0f;
-      --fg: #f0f0f0;
-      --accent: #00ffe1;
-      --card: #1c1c1c;
-      --border: #333;
-    }
 
-    body {
-      margin: 0;
-      display: flex;
-      min-height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--fg);
-    }
-
-    .site-header {
-      width: 250px;
-      background-color: #1a1a1a;
-      border-right: 2px solid var(--border);
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .site-header h1 {
-      color: var(--accent);
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    .nav-menu {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: var(--fg);
-      padding: 8px 12px;
-      border: 1px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    .nav-menu a:hover {
-      border: 1px solid var(--accent);
-      border-radius: 5px;
-      color: var(--accent);
-    }
-
-    main.content {
-      flex: 1;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    main.content h2 {
-      text-align: center;
-      color: var(--accent);
-      margin-bottom: 30px;
-    }
-
-    .blog-post {
-      background-color: var(--card);
-      border-left: 5px solid var(--accent);
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 8px rgba(0, 255, 255, 0.1);
-    }
-
-    .blog-post h2 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-
-    .blog-post .date {
-      font-size: 0.9em;
-      font-style: italic;
-      color: #999;
-      margin-bottom: 10px;
-    }
-
-    .blog-post p {
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    .blog-post a {
-      color: #00d1ff;
-      text-decoration: underline;
-    }
-
-    .site-footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1a1a1a;
-      border-top: 2px solid var(--border);
-      color: #999;
-      font-size: 0.9em;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-
-      .site-header {
-        width: 100%;
-        border-right: none;
-        border-bottom: 2px solid var(--border);
-        flex-direction: row;
-        justify-content: space-around;
-      }
-
-      .nav-menu {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-  </style>
+  <!-- Arquivo CSS externo -->
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header class="site-header">
@@ -162,6 +31,15 @@
     <h2>Minhas postagens</h2>
 
     <article class="blog-post">
+
+      <h2>Em BETA: Removedor de áudios</h2>
+      <p class="date">Postado em 26 de julho de 2025</p>
+      <p>Nesse post estarei apresentando meu novo projeto: O Removedor de Áudios!</p>
+      <p>Este removedor foi feito em HTML e JavaScript.</p>
+      <p>Há um único problema: Ele não está funcional temporáriamente, por causa do estado de desenvolvimento, ainda, mas, se resolvido, estará livre para uso!</p>
+      <p>Você também pode contribuir fazendo um Commit ou um Pull Request!</p>
+    </article>
+      
       <h2>Agora meu site está hospedado no GitHub Pages!</h2>
       <p class="date">Postado em 1 de junho de 2025</p>
       <p>Resolvi mudar do Neocities para o Pages:</p>
@@ -172,11 +50,14 @@
     
     <article class="blog-post">
       <h2>O Open CSS vai mudar!</h2>
-      <p class="date">Postado em 27 de Maio de 2025</p>
+      <p class="date">Editado em 29 de julho de 2025, terça, Postado em 27 de Maio de 2025</p>
       <p>Tá vendo esse estilão dark bonitão? Agora ele também pode ser adicionado no <strong>teu site</strong>!</p>
       <p>O Open CSS passou de um CSS simples pra um estilo <strong>poderoso, bonito e responsivo</strong>. Chega daquela aparência zoada e sem graça.</p>
-      <p>Quer deixar o site com cara de profissional hacker do futuro? Cola no meu GitHub e pega o novo Open CSS.</p>
+      <p>Quer deixar o site com cara de profissional do futuro? Cola no meu GitHub e pega o novo Open CSS.</p>
       <p><a href="https://github.com/henriq-projects" target="_blank">Ver no GitHub</a></p>
+      <p>O que mudou?</p>
+      <p><li>Se adapta em dispositivos de tela menor e maior, não ficando bugado e sem-sentido!</li></p>
+      <p><li>Visual Preto (talvez) Bonito!</li></p>
     </article>
 
     <article class="blog-post">
@@ -190,7 +71,7 @@
       <h2>Open CSS — um estilo pra quem tá começando seu site</h2>
       <p class="date">Postado em 5 de Março de 2025</p>
       <p>Criei o Open CSS: leve, fácil de personalizar e com um design limpo. Ideal pra quem quer iniciar um site sem complicação.</p>
-      <p><a href="/opencss/opencss.css" target="_blank">Baixar Open CSS (Versão antiga denominada V1.0)</a></p>
+      <p><a href="blob:https://github.com/af4bbc46-b0bb-4e79-963c-9225a7d313c8" target="_blank">Baixar Open CSS (Versão antiga denominada V1.0)</a></p>
       <p><strong>Licença:</strong> <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>. Pode usar, modificar e distribuir — só não tira os créditos!</p>
     </article>
 
@@ -206,3 +87,4 @@
   </main>
 </body>
 </html>
+
