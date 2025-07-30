@@ -21,6 +21,8 @@
         <li><a href="/portfolio.html">Meu Portfólio</a></li>
         <li><a href="/contato.html">Contato</a></li>
         <li><a href="https://diaadiadohen.blogspot.com/">Meu blog</a></li>
+        <li><input type="text" id="searchInput" placeholder="Pesquisar postagens..." /></li>
+
         <p>Projetos Úteis</p>
         <li><a href="/audio-remover">Removedor de Áudio</a></li>
       </ul>
@@ -34,19 +36,20 @@
       <h2>PipoChat (PipoNeuro): Apresento um pequeno ChatBot em Python</h2>
       <p class="date">Postado em 30 de julho de 2025, quarta</p>
       <p>Bibliotecas Usadas:</p>
-      <p><li>Tkinter</li></p>
-			<p><li>os</li></p>
-			<p><li>subprocess</li></p>
-			<p><li>E muitas outras!</li></p>
+      <ul>
+        <li>Tkinter</li>
+        <li>os</li>
+        <li>subprocess</li>
+        <li>E muitas outras!</li>
+      </ul>
       <p>Ele usa um arquivo de respostas gravadas e treinadas 'comandos.py', este arquivo contém 9 bibliotecas usadas, isso muda conforme suas modificações.</p>
-			<p>Ela responde de forma sarcástica e grossa.</p>
-			<p><strong>Em Breve no meu GitHub!</strong></p>
+      <p>Ela responde de forma sarcástica e grossa.</p>
+      <p><strong>Em Breve no meu GitHub!</strong></p>
     </article>
-    
+
     <article class="blog-post">
       <h2>Organização e Melhorias</h2>
       <p class="date">Editado em 30 de Julho, Postado em 28 de julho de 2025</p>
-      <p></p>
       <p>Organizei o diretório do OpenCSS</p>
       <p>Você também pode contribuir fazendo um Commit ou um Pull Request!</p>
     </article>
@@ -68,7 +71,7 @@
       <p>Fora que o Pages do GitHub soa mais "profissional", do que o Neocities que parece que só tem sites de "zoeira"</p>
       <p>Detalhe: Este site agora está disponível em código-aberto sob Licença MIT</p>
     </article>
-    
+
     <article class="blog-post">
       <h2>O Open CSS vai mudar!</h2>
       <p class="date">Editado em 29 de julho de 2025, terça, Postado em 27 de Maio de 2025</p>
@@ -77,8 +80,10 @@
       <p>Quer deixar o site com cara de profissional do futuro? Cola no meu GitHub e pega o novo Open CSS.</p>
       <p><a href="https://github.com/henriq-projects" target="_blank">Ver no GitHub</a></p>
       <p>O que mudou?</p>
-      <p><li>Se adapta em dispositivos de tela menor e maior, não ficando bugado e sem-sentido!</li></p>
-      <p><li>Visual Preto (talvez) Bonito!</li></p>
+      <ul>
+        <li>Se adapta em dispositivos de tela menor e maior, não ficando bugado e sem-sentido!</li>
+        <li>Visual Preto (talvez) Bonito!</li>
+      </ul>
     </article>
 
     <article class="blog-post">
@@ -106,6 +111,25 @@
       &copy; 2023 - 2025 HenSit. Todos os direitos reservados.
     </footer>
   </main>
+
+  <!-- 🔎 Script para filtrar os posts -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const posts = document.querySelectorAll('.blog-post');
+
+    searchInput.addEventListener('input', function () {
+      const filter = this.value.toLowerCase();
+      posts.forEach(post => {
+        const title = post.querySelector('h2').innerText.toLowerCase();
+        const content = post.innerText.toLowerCase();
+        if (title.includes(filter) || content.includes(filter)) {
+          post.style.display = '';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
