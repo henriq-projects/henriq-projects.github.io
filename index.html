@@ -1,118 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Site oficial do Henriq Projects, onde compartilho meus códigos e projetos!">
-  <meta name="keywords" content="Henrique, Projetos, Programação, PronReady, GitHub Pages, Open CSS, henriq, henriq-projects">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site oficial do Henrique, onde compartilho meus códigos e projetos.">
+  <meta name="keywords" content="Henrique, Programação, PronReady, Open CSS, GitHub, Projetos">
   <meta name="author" content="Henrique">
-  <title>Henriq's Blog</title>
+  <title>Henrique | Desenvolvedor em Formação</title>
 
-  <!-- Arquivo CSS externo -->
   <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
-  <header class="site-header">
+
+  <!-- SIDEBAR -->
+  <header class="sidebar">
     <h1>HenSit</h1>
+    <p class="tagline">Construindo o futuro linha por linha.</p>
+
     <nav>
-      <ul class="nav-menu">
+      <ul>
         <li><a href="https://henriq-projects.github.io/">Início</a></li>
         <li><a href="/projetos.html">Programas</a></li>
-        <li><a href="/portfolio.html">Meu Portfólio</a></li>
+        <li><a href="/portfolio.html">Portfólio</a></li>
         <li><a href="/contato.html">Contato</a></li>
-        <li><a href="https://diaadiadohen.blogspot.com/">Meu blog</a></li>
-        <li><input type="text" id="searchInput" placeholder="Pesquisar postagens..." /></li>
-
-        <p>Projetos Úteis</p>
+        <li><a href="https://diaadiadohen.blogspot.com/">Blog</a></li>
         <li><a href="/audio-remover">Removedor de Áudio</a></li>
       </ul>
     </nav>
+
+    <input type="text" id="searchInput" placeholder="Pesquisar postagens..." style="margin-top:20px;padding:8px;border-radius:6px;border:none;width:100%;">
   </header>
 
-  <main class="content">
-    <h2>Minhas postagens</h2>
+  <!-- CONTEÚDO -->
+  <main>
 
-    <article class="blog-post">
-      <h2>PipoChat (PipoNeuro): Apresento um pequeno ChatBot em Python</h2>
-      <p class="date">Postado em 30 de julho de 2025, quarta</p>
-      <p>Bibliotecas Usadas:</p>
-      <ul>
-        <li>Tkinter</li>
-        <li>os</li>
-        <li>subprocess</li>
-        <li>E muitas outras!</li>
-      </ul>
-      <p>Ele usa um arquivo de respostas gravadas e treinadas 'comandos.py', este arquivo contém 9 bibliotecas usadas, isso muda conforme suas modificações.</p>
-      <p>Ela responde de forma sarcástica e grossa.</p>
-      <p><strong>Em Breve no meu GitHub!</strong></p>
-    </article>
+    <section>
+      <h2>Minhas Postagens</h2>
 
-    <article class="blog-post">
-      <h2>Organização e Melhorias</h2>
-      <p class="date">Editado em 30 de Julho, Postado em 28 de julho de 2025</p>
-      <p>Organizei o diretório do OpenCSS</p>
-      <p>Você também pode contribuir fazendo um Commit ou um Pull Request!</p>
-    </article>
+      <!-- POST -->
+      <article class="project-card blog-post">
+        <h3>Modificações no Site!</h3>
+        <p class="date">Postado em 2 de Março de 2026</p>
+        <p>Mudei o CSS, Em breve na nova versão do Open-CSS!</p>
+        <p>Organizei o repositório no meu Github.</p>
+        <p>Logo Logo volto com mais!</p>
+      </article>
+      
+      <article class="project-card blog-post">
+        <h3>PipoChat (PipoNeuro): ChatBot em Python</h3>
+        <p class="date">Postado em 30 de julho de 2025</p>
+        <p>Bibliotecas usadas: Tkinter, os, subprocess e outras.</p>
+        <p>Responde de forma sarcástica e grossa. Em breve no GitHub.</p>
+      </article>
 
-    <article class="blog-post">
-      <h2>Em BETA: Removedor de áudios</h2>
-      <p class="date">Postado em 26 de julho de 2025</p>
-      <p>Nesse post estarei apresentando meu novo projeto: O Removedor de Áudios!</p>
-      <p>Este removedor foi feito em HTML e JavaScript.</p>
-      <p>Há um único problema: Ele não está funcional temporáriamente, por causa do estado de desenvolvimento, ainda, mas, se resolvido, estará livre para uso!</p>
-      <p>Você também pode contribuir fazendo um Commit ou um Pull Request!</p>
-    </article>
+      <article class="project-card blog-post">
+        <h3>Organização e Melhorias</h3>
+        <p class="date">Editado em 30 de julho de 2025</p>
+        <p>Organização do diretório do OpenCSS e melhorias estruturais.</p>
+      </article>
 
-    <article class="blog-post">
-      <h2>Agora meu site está hospedado no GitHub Pages!</h2>
-      <p class="date">Postado em 1 de junho de 2025</p>
-      <p>Resolvi mudar do Neocities para o Pages:</p>
-      <p>O Neocities não permite o uso de SEO, então mudei para o Pages, que não tem tanta restrição para o uso de SEO.</p>
-      <p>Fora que o Pages do GitHub soa mais "profissional", do que o Neocities que parece que só tem sites de "zoeira"</p>
-      <p>Detalhe: Este site agora está disponível em código-aberto sob Licença MIT</p>
-    </article>
+      <article class="project-card blog-post">
+        <h3>Removedor de Áudio (BETA)</h3>
+        <p class="date">Postado em 26 de julho de 2025</p>
+        <p>Projeto feito em HTML e JavaScript. Ainda em desenvolvimento.</p>
+      </article>
 
-    <article class="blog-post">
-      <h2>O Open CSS vai mudar!</h2>
-      <p class="date">Editado em 29 de julho de 2025, terça, Postado em 27 de Maio de 2025</p>
-      <p>Tá vendo esse estilão dark bonitão? Agora ele também pode ser adicionado no <strong>teu site</strong>!</p>
-      <p>O Open CSS passou de um CSS simples pra um estilo <strong>poderoso, bonito e responsivo</strong>. Chega daquela aparência zoada e sem graça.</p>
-      <p>Quer deixar o site com cara de profissional do futuro? Cola no meu GitHub e pega o novo Open CSS.</p>
-      <p><a href="https://github.com/henriq-projects" target="_blank">Ver no GitHub</a></p>
-      <p>O que mudou?</p>
-      <ul>
-        <li>Se adapta em dispositivos de tela menor e maior, não ficando bugado e sem-sentido!</li>
-        <li>Visual Preto (talvez) Bonito!</li>
-      </ul>
-    </article>
+      <article class="project-card blog-post">
+        <h3>Agora no GitHub Pages</h3>
+        <p class="date">Postado em 1 de junho de 2025</p>
+        <p>Migração do Neocities para GitHub Pages visando SEO e profissionalismo.</p>
+      </article>
 
-    <article class="blog-post">
-      <h2>Meus projetos também estão no GitHub!</h2>
-      <p class="date">Postado em 14 de Março de 2025</p>
-      <p>Agora tenho um perfil no GitHub!</p>
-      <p>Todos os meus projetos código aberto estão lá, você pode sugerir alterações ou correções em alguns códigos! <a href="https://github.com/henriq-projects" target="_blank">Meu GitHub</a>.</p>
-    </article>
+      <article class="project-card blog-post">
+        <h3>Open CSS Evoluiu</h3>
+        <p class="date">Editado em 29 de julho de 2025</p>
+        <p>Open CSS agora está mais responsivo, moderno e poderoso.</p>
+        <p><a href="https://github.com/henriq-projects" target="_blank">Ver no GitHub</a></p>
+      </article>
 
-    <article class="blog-post">
-      <h2>Open CSS — um estilo pra quem tá começando seu site</h2>
-      <p class="date">Postado em 5 de Março de 2025</p>
-      <p>Criei o Open CSS: leve, fácil de personalizar e com um design limpo. Ideal pra quem quer iniciar um site sem complicação.</p>
-      <p><a href="blob:https://github.com/af4bbc46-b0bb-4e79-963c-9225a7d313c8" target="_blank">Baixar Open CSS (Versão antiga denominada V1.0)</a></p>
-      <p><strong>Licença:</strong> <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>. Pode usar, modificar e distribuir — só não tira os créditos!</p>
-    </article>
+      <article class="project-card blog-post">
+        <h3>Projetos no GitHub</h3>
+        <p class="date">Postado em 14 de março de 2025</p>
+        <p>Todos meus projetos open-source estão disponíveis no GitHub.</p>
+      </article>
 
-    <article class="blog-post">
-      <h2>Meu Primeiro Post</h2>
-      <p class="date">Postado em 10 de Março de 2025</p>
-      <p>Esse é o meu primeiro post no blog! Aqui vou compartilhar meus projetos, ideias e qualquer coisa interessante que eu achar legal.</p>
-    </article>
+      <article class="project-card blog-post">
+        <h3>Open CSS V1.0</h3>
+        <p class="date">Postado em 5 de março de 2025</p>
+        <p>Estilo leve e personalizável para iniciantes em desenvolvimento web.</p>
+      </article>
 
-    <footer class="site-footer">
-      &copy; 2023 - 2025 HenSit. Todos os direitos reservados.
+      <article class="project-card blog-post">
+        <h3>Meu Primeiro Post</h3>
+        <p class="date">Postado em 10 de março de 2025</p>
+        <p>Início da jornada compartilhando projetos e ideias.</p>
+      </article>
+
+    </section>
+
+    <footer>
+      <p>© 2023 - 2026 HenSit.</p>
     </footer>
+
   </main>
 
-  <!-- 🔎 Script para filtrar os posts -->
+  <!-- SCRIPT DE BUSCA (continua funcionando) -->
   <script>
     const searchInput = document.getElementById('searchInput');
     const posts = document.querySelectorAll('.blog-post');
@@ -120,7 +113,7 @@
     searchInput.addEventListener('input', function () {
       const filter = this.value.toLowerCase();
       posts.forEach(post => {
-        const title = post.querySelector('h2').innerText.toLowerCase();
+        const title = post.querySelector('h3').innerText.toLowerCase();
         const content = post.innerText.toLowerCase();
         if (title.includes(filter) || content.includes(filter)) {
           post.style.display = '';
@@ -130,6 +123,7 @@
       });
     });
   </script>
+
 </body>
 </html>
 
